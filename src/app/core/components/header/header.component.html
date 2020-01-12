@@ -1,0 +1,55 @@
+<!-- START NAV -->
+<nav class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="../">
+          Roberto Cazzaniga
+        </a>
+        <span class="navbar-burger burger" data-target="navbarMenu" (click)="toggleNavbarMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+      <div id="navbarMenu" class="navbar-menu" [ngClass]="{'is-active': classNavbarMenu}">
+        <div class="navbar-end">
+          <a class="navbar-item is-active" routerLink="">
+            Home
+          </a>
+          <a class="navbar-item" routerLink="about">
+            About
+          </a>
+          <a class="navbar-item" routerLink="newsletter">
+            Newsletter
+          </a>
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link" routerLink="blog">
+              Blog
+            </a>
+            <div class="navbar-dropdown">
+              <a class="navbar-item" routerLink="">
+                Intro
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item" routerLink="">
+                Cosa serve
+              </a>
+              <a class="navbar-item" routerLink="">
+                Canvas
+              </a>
+              <a class="navbar-item" routerLink="">
+                Inizializziamo
+              </a>
+              <a class="navbar-item" routerLink="">
+                Creazione personaggio
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--#navbarMenu-->
+      <!-- <app-wdg-social></app-wdg-social> -->
+    </div>
+  </nav>
+  <!-- END NAV -->
+  

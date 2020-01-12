@@ -1,0 +1,55 @@
+{
+  "blog": [
+    {
+      "title": "Creare un Platform articolo 5",
+      "subtitle": "Creiamo il protagonista del gioco",
+      "url": "https://i.ibb.co/4fCLc23/img-platform-single-Screen-art5.jpg",
+      "author": "Cazzaniga Roberto",
+      "date": "Giugno 10, 2019",
+      "category": "Platform",
+      "tag": [],
+      "body": "In questo questo articolo creeremo e faremo muovere il personaggio del nostro platform senza farlo scappare dal canvas."
+    },
+    {
+      "title": "Creare un Platform articolo 4",
+      "subtitle": "Iniziamo anzi inizializziamo",
+      "url": "https://i.ibb.co/sKMkcPv/img-platform-single-Screen-art4.jpg",
+      "author": "Cazzaniga Roberto",
+      "date": "Giugno 8, 2019",
+      "category": "Platform",
+      "tag": [],
+      "body": "Inizializziamo il canvas e sperimentiamo un po con i metodi 2d per la grafica creando una semplicissima introduzione al nostro gioco"
+    },
+    {
+      "title": "Creare un Platform articolo 3",
+      "subtitle": "Iniziamo a strutturare il nostro progetto",
+      "url": "https://i.ibb.co/FzYN1Xb/img-platform-single-Screen-art3.jpg",
+      "author": "Cazzaniga Roberto",
+      "date": "Giugno 4, 2019",
+      "category": "Platform",
+      "tag": [],
+      "body": "Creiamo i file che ci servono e una breve spiegazione di cos’è il canvas, come funziona e perchè e fondamentale per il nostro progratto"
+    },
+    {
+      "title": "Creare un Platform articolo 2",
+      "subtitle": "Scopriamo cosa ci serve per il nostro progratto",
+      "url": "https://i.ibb.co/FnWVhpz/img-platform-single-Screen-art2.jpg",
+      "author": "Cazzaniga Roberto",
+      "date": "Maggio 30, 2019",
+      "category": "Platform",
+      "tag": [],
+      "body": "Vediamo cosa ci serve per creare al meglio il nostro videogioco, che conoscenze e che software è meglio utilizzare."
+    },
+    {
+      "title": "Creare un Platform articolo 1",
+      "subtitle": "Cosa sono i Platform game",
+      "url": "https://i.ibb.co/KxgjftS/img-platform-single-Screen-art1.jpg",
+      "author": "Cazzaniga Roberto",
+      "date": "Maggio 22, 2019",
+      "category": "Platform",
+      "tag": [],
+      "body": "Iniziamo il nostro corso provando a spiegare cos'è un platform e le guardando alcune delle categorie che hanno reso celebre questa tipologia di giochi."
+    }
+  ],
+  "category": ["platform", "avventure grafiche"]
+}

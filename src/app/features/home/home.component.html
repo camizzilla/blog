@@ -1,0 +1,15 @@
+<app-hero>Un blog per imparare a programmare videogiochi per il web con javascript e non solo</app-hero>
+
+
+<div class="container">
+    <!-- START ARTICLE FEED -->
+    <section class="articles">
+      <div class="column is-8 is-offset-2">
+        <div *ngFor="let preview of previews">
+          <app-preview [preview]="preview" ></app-preview>
+        </div>
+      </div>
+      <!--column is-8 is-offset-2-->
+    </section>
+    <!-- END ARTICLE FEED -->
+  </div>
