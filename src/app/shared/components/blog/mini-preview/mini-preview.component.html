@@ -14,15 +14,9 @@
           <p class="subtitle is-4 article-subtitle">
             {{preview.subtitle}}
           </p>
-          <div class="tags has-addons level-item">
-            <span class="tag is-rounded is-info">{{preview.author}}</span>
-            <span class="tag is-rounded">{{preview.date}}</span>
-          </div>
         </div>
       </div>
       <div class="content article-body">
-        <p>{{preview.body}}</p>
-        <br>
         <p class="has-text-centered">
           <a [routerLink]="['/blog', preview.id]" class="button is-medium is-info is-outlined">
             Leggi l'articolo

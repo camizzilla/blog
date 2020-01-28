@@ -8,14 +8,15 @@ import { Preview } from 'src/app/shared/model/blog';
   styleUrls: ['./blog.component.sass']
 })
 export class BlogComponent implements OnInit {
-  items: object ;
-
-  constructor( private fb: FirebaseService) {
-    fb.getBlog();
-   }
+  posts: any ;
+  categories;
+  constructor( private fb: FirebaseService) {}
 
   ngOnInit() {
-    this.fb.getBlog().subscribe(res => this.items = res );
+    this.fb.getCategory().subscribe(categories => {
+      this.categories = categories;
+      this.fb.getBlog().subscribe(posts => this.posts = posts );
+    });
   }
 
 }

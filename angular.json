@@ -29,7 +29,8 @@
             ],
             "styles": [
               "src/styles.sass",
-              "node_modules/bulma/bulma.sass"
+              "node_modules/bulma/bulma.sass",
+              "node_modules/highlight.js/styles/atelier-forest-dark.css"
             ],
             "scripts": []
           },

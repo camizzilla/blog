@@ -1,1 +1,31 @@
-<p>post works!</p>
+
+<section class="hero is-primary">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        {{post.title}}
+      </h1>
+      <h2 class="subtitle">
+        {{post.subtitle}}
+      </h2>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="column is-8 is-offset-2">
+      <div class="content is-medium">
+        <div [innerHTML]="post.html"></div> 
+        <br>
+        <app-newsletter-block></app-newsletter-block>
+        <br>
+        <app-contacts></app-contacts>
+      </div>
+    </div>
+    <!-- column is-8 is-offset-2 -->
+  </div>
+  <!-- container -->
+</section>
+<!-- section -->
+
