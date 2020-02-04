@@ -30,7 +30,7 @@
             "styles": [
               "src/styles.sass",
               "node_modules/bulma/bulma.sass",
-              "node_modules/highlight.js/styles/atelier-forest-dark.css"
+              "node_modules/highlight.js/styles/atom-one-dark.css"
             ],
             "scripts": []
           },

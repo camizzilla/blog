@@ -19,5 +19,10 @@ export class FirebaseService {
   getPost(params) {
     return this.db.collection('/blog').doc(params.id).valueChanges();
   }
+
+  getPostContent(params) {
+    return this.db.collection('/blog').doc(params.id).collection('content').valueChanges();
+  }
+
 }
 

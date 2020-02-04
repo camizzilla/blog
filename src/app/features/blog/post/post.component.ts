@@ -10,18 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 export class PostComponent implements OnInit {
   id: string;
   post: any;
-  varCode = `
-    let canvas = document.getElementById("myCanvas");
-    canvas.width = 640;
-    canvas.height = 480;
-
-    let context = canvas.getContext('2d');
-
-    let playerWidth = 50;
-    let playerHeight = 100;
-    let playerX = 100;
-    let playerY = canvas.height - playerHeight;`;
-
+  contents = [];
   constructor(
     private route: ActivatedRoute,
     private fb: FirebaseService
@@ -29,34 +18,15 @@ export class PostComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.subscribe( params => this.fb.getPost(params).subscribe(post => this.post = post ));
+    const count = { section: 0, code: 0, canvas: 0 };
+    this.route.params.subscribe( params => this.fb.getPostContent(params)
+    .subscribe(content => content[0].map.map( (elem: string) => this.contents.push(this.getHtmlElem( content[0], elem, count )))
+    ));
   }
 
-  htmlCode = `
-  <html>
-    <head>
-      <meta charset="UTF-8">
-      <title>Platform game - single screen</title>
-      <link rel="stylesheet" type="text/css" href="style.css">
-    </head>
-
-    <body>
-      <canvas id=”myCanvas”></canvas>
-    </body>
-    <script src="main.js"></script>
-  </html>`;
-
-  cssCode = `
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+  getHtmlElem( contents, elem: string, count: object ) {
+    let xml = '';
+    (contents[elem] && elem === 'code') ? (contents[elem][count[elem]++].split('|').map(e => xml += `${e}\n`)) : (xml = contents[elem][count[elem]++]);
+    return (contents[elem]) && ({status: elem, html: xml});
   }
-  
-  canvas {
-    width: 300px;  
-    height: 300px;
-    border: 3px solid black;
-  }
-  `
 }

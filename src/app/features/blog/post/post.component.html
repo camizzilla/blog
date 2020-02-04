@@ -1,5 +1,5 @@
 
-<section class="hero is-primary">
+<!-- <section class="hero is-primary">
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
@@ -10,13 +10,22 @@
       </h2>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section">
   <div class="container">
     <div class="column is-8 is-offset-2">
       <div class="content is-medium">
-        <div [innerHTML]="post.html"></div> 
+        <div class="post" *ngFor="let content of contents">
+          
+          <div *ngIf="content.status && content.status === 'section'" [innerHTML]="content.html"></div>
+          <pre *ngIf="content.status && content.status === 'code'" >
+            <code 
+              [highlight]="content.html" 
+              [lineNumbers]="true">
+            </code >
+          </pre>
+        </div>
         <br>
         <app-newsletter-block></app-newsletter-block>
         <br>
@@ -28,4 +37,3 @@
   <!-- container -->
 </section>
 <!-- section -->
-
