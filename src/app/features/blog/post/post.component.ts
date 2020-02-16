@@ -14,19 +14,32 @@ export class PostComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private fb: FirebaseService
-    ) {}
+  ) {}
 
   ngOnInit() {
-    this.route.params.subscribe( params => this.fb.getPost(params).subscribe(post => this.post = post ));
-    const count = { section: 0, code: 0, canvas: 0 };
-    this.route.params.subscribe( params => this.fb.getPostContent(params)
-    .subscribe(content => content[0].map.map( (elem: string) => this.contents.push(this.getHtmlElem( content[0], elem, count )))
-    ));
+    this.route.params.subscribe( params => {
+      const count = { section: 0, code: 0, canvas: 0 };
+      this.contents = [];
+      this.fb.getPost(params).subscribe( post => this.post = post );
+      this.fb.getPostContent(params).subscribe(content => {
+        content[0].map.map( (elem: string) => this.contents.push( this.getHtmlElem( content[0], elem, count )));
+      });
+    });
   }
 
   getHtmlElem( contents, elem: string, count: object ) {
-    let xml = '';
-    (contents[elem] && elem === 'code') ? (contents[elem][count[elem]++].split('|').map(e => xml += `${e}\n`)) : (xml = contents[elem][count[elem]++]);
+    let xml = contents[elem][count[elem]++];
+
+    if (contents[elem] && elem === 'code') {
+      xml = this.getCode(xml);
+    }
+
     return (contents[elem]) && ({status: elem, html: xml});
+  }
+
+  getCode(html: string) {
+    let code = '';
+    html.split('|').map(e => code += `${e}\n`);
+    return code;
   }
 }

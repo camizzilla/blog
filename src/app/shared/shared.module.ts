@@ -13,8 +13,8 @@ import { NewsletterBlockComponent } from './components/widgets/newsletter-block/
 import { ContactsComponent } from './components/widgets/contacts/contacts.component';
 
 @NgModule({
-  declarations: [HeroComponent, PreviewComponent, CanvasComponent, MiniPreviewComponent, NewsletterBlockComponent, ContactsComponent],
-  exports: [HeroComponent, PreviewComponent, MiniPreviewComponent, NewsletterBlockComponent, ContactsComponent],
+  declarations: [HeroComponent, PreviewComponent, CanvasComponent, MiniPreviewComponent, NewsletterBlockComponent, ContactsComponent, CanvasComponent],
+  exports: [HeroComponent, PreviewComponent, MiniPreviewComponent, NewsletterBlockComponent, ContactsComponent, CanvasComponent],
   imports: [
     RouterModule,
     CommonModule,

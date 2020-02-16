@@ -1,4 +1,3 @@
-
 <!-- <section class="hero is-primary">
   <div class="hero-body">
     <div class="container">
@@ -17,14 +16,16 @@
     <div class="column is-8 is-offset-2">
       <div class="content is-medium">
         <div class="post" *ngFor="let content of contents">
-          
           <div *ngIf="content.status && content.status === 'section'" [innerHTML]="content.html"></div>
-          <pre *ngIf="content.status && content.status === 'code'" >
+          <pre *ngIf="content.status && content.status === 'code'">
             <code 
               [highlight]="content.html" 
               [lineNumbers]="true">
-            </code >
+            </code>
           </pre>
+          <div class="canvas-wrapper" *ngIf="content.status && content.status === 'canvas'">
+            <app-canvas [n]="content.html.id" [haveBtn]="content.html.btn" text=""></app-canvas>
+          </div>
         </div>
         <br>
         <app-newsletter-block></app-newsletter-block>

@@ -1,53 +1,48 @@
-import { Component, OnInit, ElementRef, ViewChild, Input } from '@angular/core';
+import { Component, ElementRef, ViewChild, Input, AfterViewInit } from '@angular/core';
+import { CanvasService } from '../../services/canvas.service';
 
 @Component({
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.sass']
 })
-export class CanvasComponent implements OnInit {
+export class CanvasComponent implements AfterViewInit {
 
-  @Input() public classCanvas;
-  @Input() public addBtn;
+  @Input() n: string;
+  @Input() text: string;
+  @Input() haveBtn: boolean;
 
+  @ViewChild('canvas', {static: false}) canvas: ElementRef;
 
-  @ViewChild('canvas', {static: false}) canvas: ElementRef<HTMLCanvasElement>;
   ctx: CanvasRenderingContext2D;
-  canvasWidth: number;
-  canvasHeight: number;
-  raf = 0;
-  stopAnimation: boolean;
-  square;
+  WIDTH: number;
+  HEIGHT: number;
+  toggle = true;
 
-  constructor() { }
+  constructor( private canvasService: CanvasService ) {}
 
-  ngOnInit() {
+  ngAfterViewInit() {
+    this.init({width: 600, height: 400});
+    this.startFunct();
+  }
+
+  init({width, height}) {
     this.ctx = this.canvas.nativeElement.getContext('2d');
-    this.square = new this.classCanvas(this.ctx);
-    this.stopAnimation = false;
+    this.WIDTH = this.canvas.nativeElement.width = width;
+    this.HEIGHT = this.canvas.nativeElement.height = height;
   }
 
-  start() {
-    if (this.raf) {
-      window.cancelAnimationFrame(this.raf);
-      this.stopAnimation = true;
-    }
-    this.raf = window.requestAnimationFrame(() => this.loop());
-  }
-
-  loop() {
-    if (this.stopAnimation) {
-      this.stopAnimation = false;
-      return;
-    }
-    this.square.start();
-    window.requestAnimationFrame(() => this.loop());
+  startFunct() {
+    this.canvasService[this.n](this.ctx, this.WIDTH, this.HEIGHT);
   }
 
   play() {
-    this.square = new this.classCanvas(this.ctx);
-    // this.square.reset();
-    this.start();
+    this.canvasService.isStart(this.ctx, this.WIDTH, this.HEIGHT);
+    this.toggle = false;
   }
 
+  reset() {
+    this.startFunct();
+    this.toggle = true;
+  }
 }
