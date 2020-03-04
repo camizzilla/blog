@@ -1,0 +1,19 @@
+
+
+<div class="menu">
+  <ul class="has-text-left">
+    <li><a routerLink="">Home</a></li>
+    <li><a routerLink="about">About</a></li>
+    <li><a routerLink="newsletter">Newsletter</a></li>
+    <li><a  routerLink="blog">Blog</a>
+      <ul>
+        <li><a [routerLink]="['/blog', '1.1']">Intro</a></li>
+        <li><a [routerLink]="['/blog', '1.2']">Cosa serve</a></li>
+        <li><a [routerLink]="['/blog', '1.3']">Canvas</a></li>
+        <li><a [routerLink]="['/blog', '1.4']">Inizializziamo</a></li>
+        <li><a [routerLink]="['/blog', '1.5']">Creazione personaggio</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+

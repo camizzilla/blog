@@ -65,6 +65,12 @@ export class CanvasService {
     this.animationFrame = requestAnimationFrame(() => this.loop(ctx, player, step, WIDTH, HEIGHT));
   }
 
+  canvas7(ctx, WIDTH, HEIGHT) {
+    const step = 5;
+    const player = this.playerCharact(HEIGHT);
+    this.animationFrame = requestAnimationFrame(() => this.loop(ctx, player, step, WIDTH, HEIGHT));
+  }
+
   loop(ctx, player, step, WIDTH, HEIGHT) {
     this.drawRect(ctx, player);
     player.x = player.x + step;

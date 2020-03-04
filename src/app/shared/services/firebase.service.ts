@@ -12,6 +12,10 @@ export class FirebaseService {
     return this.db.collection('/blog', ref => ref.orderBy('date', 'desc')).valueChanges();
   }
 
+  getLastPost() {
+    return this.db.collection('/blog', ref => ref.orderBy('date', 'desc').limit(2)).valueChanges();
+  }
+
   getCategory() {
     return this.db.collection('/categories').valueChanges();
   }

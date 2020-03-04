@@ -16,7 +16,7 @@
           </p>
           <div class="tags has-addons level-item">
             <span class="tag is-rounded is-info">{{preview.author}}</span>
-            <span class="tag is-rounded">{{preview.date}}</span>
+            <span class="tag is-rounded">{{preview.date.toDate() | date: 'dd-MM-yyyy'}}</span>
           </div>
         </div>
       </div>

@@ -11,10 +11,34 @@ import { CanvasComponent } from './components/canvas/canvas.component';
 import { MiniPreviewComponent } from './components/blog/mini-preview/mini-preview.component';
 import { NewsletterBlockComponent } from './components/widgets/newsletter-block/newsletter-block.component';
 import { ContactsComponent } from './components/widgets/contacts/contacts.component';
+import { SocialComponent } from './components/widgets/social/social.component';
+import { LastPostComponent } from './components/widgets/last-post/last-post.component';
+import { MenuComponent } from './components/menu/menu.component';
 
 @NgModule({
-  declarations: [HeroComponent, PreviewComponent, CanvasComponent, MiniPreviewComponent, NewsletterBlockComponent, ContactsComponent, CanvasComponent],
-  exports: [HeroComponent, PreviewComponent, MiniPreviewComponent, NewsletterBlockComponent, ContactsComponent, CanvasComponent],
+  declarations: [
+    HeroComponent,
+    PreviewComponent,
+    CanvasComponent,
+    MiniPreviewComponent,
+    NewsletterBlockComponent,
+    ContactsComponent,
+    CanvasComponent,
+    SocialComponent,
+    LastPostComponent,
+    MenuComponent
+  ],
+  exports: [
+    HeroComponent,
+    PreviewComponent,
+    MiniPreviewComponent,
+    NewsletterBlockComponent,
+    ContactsComponent,
+    CanvasComponent,
+    SocialComponent,
+    LastPostComponent,
+    MenuComponent
+  ],
   imports: [
     RouterModule,
     CommonModule,

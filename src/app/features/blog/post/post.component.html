@@ -24,7 +24,7 @@
             </code>
           </pre>
           <div class="canvas-wrapper" *ngIf="content.status && content.status === 'canvas'">
-            <app-canvas [n]="content.html.id" [haveBtn]="content.html.btn" text=""></app-canvas>
+            <app-canvas [data]="content.html"></app-canvas>
           </div>
         </div>
         <br>

@@ -1,0 +1,23 @@
+<ul class="is-unstyled">
+  <li *ngFor="let post of lastPosts">
+    <a [routerLink]="['/blog', post.id]">
+      <div class="card article">
+        <div class="card-content">
+          <div class="media-center">
+            <figure class="image">
+              <img [src]="post.url" class="author-image" [alt]="post.title">
+            </figure>
+          </div>
+          <div class="media">
+            <div class="media-content has-text-centered">
+              <p class="title is-5 article-title">{{post.title}}</p>
+              <p class="subtitle is-6 article-subtitle">
+                {{post.subtitle}}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+  </li>
+  <ul>

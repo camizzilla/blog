@@ -1,1 +1,61 @@
-<p>newsletter works!</p>
+<div class="hero-body newsletter">
+    <div class="container has-text-centered">
+      <div class="columns is-vcentered">
+        <div class="column is-5 has-text-white has-background-primary newsletter-text">
+          <h1 class="title is-2 has-text-weight-bold is-uppercase has-text-white">
+            newsletter
+          </h1>
+          <h3 class="is-size-3 has-text-weight-semibold">Iscriviti per ricevere ogni 2 settimane, anteprime e
+            approfondimenti del mondo della
+            programmazione di
+            videogiochi per il web.
+          </h3>
+        </div>
+        <div class="column is-6 is-offset-1">
+          <form id="newsletter" [formGroup]="newsletterForm" (ngSubmit)="onSubmit()">
+  
+            <!-- name -->
+            <div class="field">
+              <label class="label is-small is-pulled-left has-text-grey-light">Nome</label>
+              <div class="control has-icons-left has-icons-right">
+                <input type="text" name="name" class="input is-medium"
+                  [ngClass]="{ 'is-danger': submitted && f.name.errors }" placeholder="Nome" formControlName="name">
+                <span class="icon is-left">
+                  <i class="fas fa-user-astronaut"></i>
+                </span>
+                <span class="icon is-right">
+                  <i class="fas fa-check"
+                    [ngClass]="{'has-text-success': newsletterForm.controls.name.valid && newsletterForm.controls.name.dirty}"></i>
+                </span>
+              </div>
+              <div *ngIf="submitted && f.name.errors" class="is-danger">
+                <span *ngIf="f.name.errors.required" class="is-small has-text-danger">Nome richiesto</span>
+                <span *ngIf="f.name.errors.maxlength" class="is-small has-text-danger">Nome troppo lungo</span>
+              </div>
+            </div>
+            <!-- email -->
+            <div class="field">
+              <label class="label is-small is-pulled-left has-text-grey-light">Email</label>
+              <div class="control has-icons-left has-icons-right">
+                <input type="email" name="email" class="input is-medium"
+                  [ngClass]="{ 'is-danger': submitted && f.email.errors }" placeholder="Email" formControlName="email">
+                <span class="icon is-left">
+                  <i class="far fa-envelope"></i>
+                </span>
+                <span class="icon is-right">
+                  <i class="fas fa-check" [ngClass]="{'has-text-success': !newsletterForm.controls.email.errors}"></i>
+                </span>
+              </div>
+              <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <span *ngIf="f.email.errors.required" class="is-small  has-text-danger">Email richiesta
+                </span>
+                <span *ngIf="f.email.errors.email" class="is-small  has-text-danger">Email non valida
+                </span>
+              </div>
+            </div>
+            <button class="button is-danger is-large">Invia</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

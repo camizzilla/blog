@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { NewsletterComponent } from './newsletter/newsletter.component';
 import { SharedModule } from '../shared/shared.module';
 import { BlogModule } from './blog/blog.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { BlogModule } from './blog/blog.module';
   imports: [
     CommonModule,
     SharedModule,
-    BlogModule
+    BlogModule,
+    ReactiveFormsModule
   ]
 })
 export class FeaturesModule { }
