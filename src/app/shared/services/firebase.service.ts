@@ -20,8 +20,8 @@ export class FirebaseService {
     return this.db.collection('/categories').valueChanges();
   }
 
-  getPost(params) {
-    return this.db.collection('/blog').doc(params.id).valueChanges();
+  getPost(id) {
+    return this.db.collection('/blog').doc(id).valueChanges();
   }
 
   getPostContent(params) {

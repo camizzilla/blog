@@ -9,7 +9,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PostComponent implements OnInit {
   id: string;
-  post: any;
+  title: string;
+  subtitle: string;
   contents = [];
   constructor(
     private route: ActivatedRoute,
@@ -20,7 +21,10 @@ export class PostComponent implements OnInit {
     this.route.params.subscribe( params => {
       const count = { section: 0, code: 0, canvas: 0 };
       this.contents = [];
-      this.fb.getPost(params).subscribe( post => this.post = post );
+      this.fb.getPost(params.id).subscribe( post => {
+        this.title = post['title'];
+        this.subtitle = post['subtitle'];
+      } );
       this.fb.getPostContent(params).subscribe(content => {
         content[0].map.map( (elem: string) => this.contents.push( this.getHtmlElem( content[0], elem, count )));
       });

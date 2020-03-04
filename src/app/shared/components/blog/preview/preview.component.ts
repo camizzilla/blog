@@ -6,12 +6,9 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './preview.component.html',
   styleUrls: ['./preview.component.sass']
 })
-export class PreviewComponent implements OnInit {
+export class PreviewComponent {
 
   @Input() preview: Preview;
-  constructor() { }
-
-  ngOnInit() {
-  }
+  constructor() {}
 
 }
