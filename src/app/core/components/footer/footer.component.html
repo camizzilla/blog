@@ -1,38 +1,21 @@
 <!-- footer -->
 <footer class="footer">
-    <div class="container">
-      <div class="content has-text-centered">
-        <div class="columns">
-          <div class="column">
-            <div class="content">
-              <ul class="is-unstyled is-pulled-left">
-                  <li> 
-                    <app-social></app-social> 
-                  </li>
-                  <li>
-                    <a>
-                      <span class="icon">
-                        <i class="fas fa-home"></i>
-                      </span>
-                      camizzilla@gmail.com
-                    </a>
-                  </li>
-                  <li>
-                    <a routerLink="">Privacy policy</a>
-                  </li>
-                </ul>
-              </div>
-          </div>
-          <div class="column">
-            <app-last-post></app-last-post>
-          </div>
-          <div class="column">
-            <app-menu></app-menu>
-          </div>
-          <div class="column">
-            <app-newsletter-block></app-newsletter-block>
-          </div>
+  <div class="container">
+    <div class="content has-text-centered">
+      <div class="columns">
+        <div class="column">
+          <app-info></app-info>
+        </div>
+        <div class="column">
+          <app-last-post></app-last-post>
+        </div>
+        <div class="column">
+          <app-menu></app-menu>
+        </div>
+        <div class="column">
+          <app-newsletter-block></app-newsletter-block>
         </div>
       </div>
     </div>
-  </footer>
+  </div>
+</footer>
