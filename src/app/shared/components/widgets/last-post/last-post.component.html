@@ -1,5 +1,5 @@
-<ul class="is-unstyled">
-  <li *ngFor="let post of lastPosts">
+<div class="columns is-mobile">
+  <div class=" is-half-mobile" *ngFor="let post of lastPosts">
     <a [routerLink]="['/blog', post.id]">
       <div class="card article">
         <div class="card-content">
@@ -19,5 +19,5 @@
         </div>
       </div>
     </a>
-  </li>
-  <ul>
+  </div>
+<div>
