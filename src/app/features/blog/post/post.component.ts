@@ -22,8 +22,8 @@ export class PostComponent implements OnInit {
       const count = { section: 0, code: 0, canvas: 0 };
       this.contents = [];
       this.fb.getPost(params.id).subscribe( post => {
-        this.title = post['"title"'];
-        this.subtitle = post['"subtitle"'];
+        this.title = post['title'];
+        this.subtitle = post['subtitle'];
       } );
       this.fb.getPostContent(params).subscribe(content => {
         content[0].map.map( (elem: string) => this.contents.push( this.getHtmlElem( content[0], elem, count )));
