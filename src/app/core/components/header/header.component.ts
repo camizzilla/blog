@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.sass']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+
+  @ViewChild('navBurger', {static: false}) navBurger: ElementRef;
+  @ViewChild('navMenu', {static: false}) navMenu: ElementRef;
 
   constructor() { }
 
-  ngOnInit() {
+  toggleNavbar() {
+    this.navBurger.nativeElement.classList.toggle('is-active');
+    this.navMenu.nativeElement.classList.toggle('is-active');
   }
 
 }

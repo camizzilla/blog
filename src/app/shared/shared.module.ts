@@ -14,6 +14,7 @@ import { ContactsComponent } from './components/widgets/contacts/contacts.compon
 import { SocialComponent } from './components/widgets/social/social.component';
 import { LastPostComponent } from './components/widgets/last-post/last-post.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { InfoComponent } from './components/widgets/info/info.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { MenuComponent } from './components/menu/menu.component';
     CanvasComponent,
     SocialComponent,
     LastPostComponent,
-    MenuComponent
+    MenuComponent,
+    InfoComponent
   ],
   exports: [
     HeroComponent,
@@ -37,7 +39,8 @@ import { MenuComponent } from './components/menu/menu.component';
     CanvasComponent,
     SocialComponent,
     LastPostComponent,
-    MenuComponent
+    MenuComponent,
+    InfoComponent
   ],
   imports: [
     RouterModule,
