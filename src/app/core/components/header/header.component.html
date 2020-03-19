@@ -17,34 +17,34 @@
       </div>
       <div id="navbarMenu" #navMenu class="navbar-menu" > <!--[ngClass]="{'is-active': classNavbarMenu}"-->
         <div class="navbar-end">
-          <a class="navbar-item is-active" routerLink="">
+          <a class="navbar-item is-active" (click)="toggleNavbar()" routerLink="">
             Home
           </a>
-          <a class="navbar-item" routerLink="about">
+          <a class="navbar-item" (click)="toggleNavbar()" routerLink="about">
             About
           </a>
-          <a class="navbar-item" routerLink="newsletter">
+          <a class="navbar-item" (click)="toggleNavbar()" routerLink="newsletter">
             Newsletter
           </a>
           <div class="navbar-item has-dropdown is-hoverable">
-            <a class="navbar-link" routerLink="blog">
+            <a class="navbar-link" (click)="toggleNavbar()" routerLink="blog">
               Blog
             </a>
             <div class="navbar-dropdown">
-              <a class="navbar-item" [routerLink]="['/blog', '1.1']">
+              <a class="navbar-item" (click)="toggleNavbar()" [routerLink]="['/blog', '1.1']">
                 Intro
               </a>
               <hr class="navbar-divider">
-              <a class="navbar-item" [routerLink]="['/blog', '1.2']">
+              <a class="navbar-item" (click)="toggleNavbar()" [routerLink]="['/blog', '1.2']">
                 Cosa serve
               </a>
-              <a class="navbar-item" [routerLink]="['/blog', '1.3']">
+              <a class="navbar-item" (click)="toggleNavbar()" [routerLink]="['/blog', '1.3']">
                 Canvas
               </a>
-              <a class="navbar-item" [routerLink]="['/blog', '1.4']">
+              <a class="navbar-item" (click)="toggleNavbar()" [routerLink]="['/blog', '1.4']">
                 Inizializziamo
               </a>
-              <a class="navbar-item" [routerLink]="['/blog', '1.5']">
+              <a class="navbar-item" (click)="toggleNavbar()" [routerLink]="['/blog', '1.5']">
                 Creazione personaggio
               </a>
             </div>

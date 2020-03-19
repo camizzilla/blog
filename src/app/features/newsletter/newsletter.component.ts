@@ -47,10 +47,12 @@ export class NewsletterComponent implements OnInit {
     }
 
     console.log('SUCCESS!! :-)\n\n' + JSON.stringify(this.newsletterForm.value));
+
     const user = {
       name: this.newsletterForm.value.name,
       email: this.newsletterForm.value.email
-    }
+    };
+
     this.subscription = this.newsletterService.sendEmail(user).
       subscribe(data => {
         // const msg = data.message;
