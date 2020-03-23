@@ -6,12 +6,15 @@ import { NewsletterComponent } from './newsletter/newsletter.component';
 import { SharedModule } from '../shared/shared.module';
 import { BlogModule } from './blog/blog.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+
 
 @NgModule({
   declarations: [
     HomeComponent,
     AboutComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    PrivacyPolicyComponent
   ],
   imports: [
     CommonModule,

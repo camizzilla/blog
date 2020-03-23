@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FeaturesModule } from './features/features.module';
 import { SharedModule } from './shared/shared.module';
 import { HighlightModule } from 'ngx-highlightjs';
+import { CookieLawModule } from 'angular2-cookie-law';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HighlightModule } from 'ngx-highlightjs';
     CoreModule,
     FeaturesModule,
     SharedModule,
-    HighlightModule
+    HighlightModule,
+    CookieLawModule
   ],
   providers: [],
   bootstrap: [AppComponent]
